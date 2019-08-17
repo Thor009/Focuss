@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js" integrity="sha256-iaFenEC8axSAnyNu6M0+0epCOTwfbKVceFXNd5s/ki4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+	<form action="/post-ad-sale" method="post" class="form-horizontal" role="form" name="customSearchForm" id="customform">
+		<input type="hidden" name="_token" value="a2044870b028f34eb7aef90dee3b0d730bcded2f2eb652fa0ad8b1e492b1df39">
+			<h3 class="text-center">ေရာင္းရန္ရွိသည္</h3> 
+			<div class="m-b-20"></div>
+			<div class="form-group">
+			  <label for="Title" class="col-sm-4 control-label">ေၾကာ္ျငာေခါင္းစဥ္</label>
+			   <div class="col-sm-7">
+			    <input name="Title" id="Title" type="text" value="" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" placeholder="ေၾကာ္ျငာေခါင္းစဥ္" daူta-original-title="နမူနာ (၁)<br />ပါရမီလမ္းမ လံုးခ်င္းအိမ္တစ္လံုး ငွါးရန္ရွိသည္<br /><br />နမူနာ (၂)<br />ယုဇနတာဝါ ကြန္ဒို ငွါးရန္ရွိသည္<br /><br />နမူနာ (၃)<br />ရန္ကုန္ အင္းစိန္လမ္းမ တိုက္ခန္း ငွါးရန္ရွိသည္"> 
+			</div> 
+		</div>
+	    <div class="form-group">
+		      <label for="Title_Eng" class="col-sm-4 control-label">ေၾကာ္ျငာေခါင္းစဥ္ (English Version)</label>
+		      <div class="col-sm-7">
+		     	 <input name="Title_Eng" id="Title_Eng" type="text" value="" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" placeholder="အဂၤလိပ္လို ေႀကာ္ျငာ ေခါင္းစဥ္ (မထည့္လိုပါက ခ်န္ထားခဲ့ပါ။)" data-original-title="အဂၤလိပ္လို ေႀကာ္ျငာ ေခါင္းစဥ္ (မထည့္လိုပါက ခ်န္ထားခဲ့ပါ။) <br /> Example (1)<br />New house for sale at strand road.<br /><br />Example (2)<br />For sale Sky Tower Condo."> 
+		     	</div> 
+	     	</div>
+			<div class="form-group">
+		        <label for="Property_Type" class="col-sm-4 control-label">အမ်ိဳးအစား</label>
+		          <div class="col-sm-7">
+		           <select name="Property_Type" id="Property_Type" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" onchange="UpdateNewLaunch();" data-original-title="အမ်ိဳးအစားတစ္ခု ေရြးျခယ္ပါ။">
+		            <option value="33333">&nbsp;</option> <option value="1">တိုက္ခန္း</option>
+		            <option value="2">ကြန္ဒို</option> <option value="3">လံုးခ်င္းအိမ္</option>
+		            <option value="4">ေျမကြက္ ၊ ၿခံကြက္</option>
+		            <option value="5">ဆိုင္ခန္း ၊ ႐ံုးခန္း</option>
+		            <option value="6">စက္မႈ႔ဇုန္</option> 
+		            </select>
+		        </div>
+	        </div>
+			<div class="form-group collapse" id="floor-wrapper" style="display: none;">
+              <label for="floor" class="col-sm-4 control-label">အလႊာ</label>
+               <div class="col-sm-7">
+	               <select name="floor" id="floor" class="form-control">
+	                <option value="0">ေ႐ြးခ်ယ္ပါ</option>
+	                <option value="1">ေျမညီထပ္</option>
+					<option value="2">ပထမထပ္</option>
+					<option value="3">ဒုတိယထပ္</option>
+					<option value="4">တတိယထပ္</option>
+					<option value="5">စတုတၳထပ္</option>
+					<option value="6">ပၪၥမထပ္</option>
+					<option value="7">၆ ထပ္</option>
+					<option value="8">၇ ထပ္</option>
+					<option value="9">၈ ထပ္</option>
+					<option value="10">၉ ထပ္</option>
+					<option value="11">၁၀ ထပ္</option>
+					<option value="12">၁၁ ထပ္</option>
+					<option value="13">၁၂ ထပ္</option>
+					<option value="14">၁၃ ထပ္</option>
+					<option value="15">၁၄ ထပ္</option>
+					<option value="16">၁၅ ထပ္</option>
+					<option value="17">၁၆ ထပ္</option>
+					<option value="18">၁၇ ထပ္</option>
+					<option value="19">၁၈ ထပ္</option>
+					<option value="20">၁၉ ထပ္</option>
+					<option value="21">၂၀ ထပ္</option>
+					<option value="22">၂၁ ထပ္</option>
+					<option value="23">၂၂ ထပ္</option>
+					<option value="24">၂၃ ထပ္</option>
+					<option value="25">၂၄ ထပ္</option>
+					<option value="26">၂၅ ထပ္</option>
+					</select> 
+				</div> 
+			</div>
+         <div class="form-group" id="trhideclass-newlaunch" style="display: none;">
+	      <label class="col-sm-4 control-label">ေဆာက္လုပ္ၿပီးစီးမႈ႔</label>
+	       <div class="col-sm-8">
+	        <input type="radio" name="New_Launch" id="New_Launch1" class="radio-button" onclick="UpdateCompletionDate();" value="0" checked="checked">&nbsp;
+	        <label for="New_Launch1" class="radiobuttonlabel">ေဆာက္လုပ္ၿပီး</label>&nbsp;&nbsp;&nbsp;&nbsp;
+	        </div> 
+         	</div>
+            <div class="form-group" id="trhideclass-completiondate" style="display: none;">
+               <label class="col-sm-4 control-label">ေဆာက္လုပ္ၿပီးစီးမည့္အခ်ိန္</label>
+                <div class="col-sm-3">
+             	<select name="Completion_Date_Month" id="Completion_Date_Month" class="form-control">
+              		<option value="0">လကို ေရြးခ်ယ္ပါ</option>
+               		<option value="1">January</option>
+               		<option value="2">February</option>
+               		<option value="3">March</option>
+               		<option value="4">April</option>
+               		<option value="5">May</option>
+               		<option value="6">June</option>
+               		<option value="7">July</option>
+               		<option value="8">August</option>
+               		<option value="9">September</option>
+               		<option value="10">October</option>
+               		<option value="11">November</option>
+               		<option value="12">December</option> 
+               	</select> 
+              		</div>
+                    <div class="col-sm-3">
+                     <select name="Completion_Date_Year" id="Completion_Date_Year" class="form-control">
+	                     <option value="0">ခုႏွစ္ကို ေရြးခ်ယ္ပါ</option>
+	                      <option value="2019">2019</option>
+	                      <option value="2020">2020</option>
+	                      <option value="2021">2021</option>
+	                      <option value="2022">2022</option>
+	                      <option value="2023">2023</option>
+	                      <option value="2024">2024</option>
+	                      <option value="2025">2025</option>
+	                      <option value="2026">2026</option>
+	                      <option value="2027">2027</option>
+	                      <option value="2028">2028</option>
+	                      <option value="2029">2029</option>
+	                    </select> 
+			       </div> 
+			     </div>
+				<div class="form-group" id="price-info-text" style="display: none;">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-7 text text-info">	ေရာင္းေစ်း၊ တစ္စတုရန္းေပ ေစ်းႏႈန္း၊ တစ္ဧက ေစ်းႏႈန္း မ်ားကို တစ္ခု(သို႔မဟုတ္)တစ္ခုထက္ပိုျပီး ထည့္ႏိုင္ပါသည္။ </div> </div>
+					<div class="form-group">
+					<label for="Price" class="col-sm-4 control-label">ေရာင္းေစ်း က်ပ္ (သိန္း)</label>
+					<div class="col-sm-7">
+					<input name="Price" id="Price" type="text" value="" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" data-original-title="ေရာင္းေစ်း က်ပ္<br />(အဂၤလိပ္ ဂဏာန္းျဖင့္ ႐ိုက္ထည့္ပါ)<br /><br />နမူနာ<br />50 = သိန္းငါးဆယ္<br />82.5 = ရွစ္ဆယ့္ႏွစ္သိန္းခြဲ<br />125.85 = တစ္ရာႏွစ္ဆယ့္ငါးသိန္း ရွစ္ေသာင္းငါးေထာင္<br />700 = သိန္းခုႏွစ္ရာ<br />1200 = သိန္းတစ္ေထာင့္ႏွစ္ရာ<br />25000 = သိန္းႏွစ္ေသာင္းခြဲ<br /><br />အဂၤလိပ္ ဂဏာန္းျဖင့္ ႐ိုက္ထည့္ရန္ လိုပါသည္။"> </div> </div>
+					<div class="form-group" id="Sqrt-ft-Price-Container" style="display: none;">
+					<label for="Sqrt-ft-Price" class="col-sm-4 control-label">တစ္စတုရန္းေပ ေစ်းႏႈန္း</label>
+					<div class="col-sm-7">
+					<input name="Sqrt_ft_Price" id="Sqrt-ft-Price" type="text" value="" class="form-control" placeholder="ရိွလွ်င္ ထည့္ရန္" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" data-original-title="ေရာင္းေစ်း က်ပ္<br />(အဂၤလိပ္ ဂဏာန္းျဖင့္ ႐ိုက္ထည့္ပါ)<br /><br />နမူနာ<br />50 = သိန္းငါးဆယ္<br />82.5 = ရွစ္ဆယ့္ႏွစ္သိန္းခြဲ<br />125.85 = တစ္ရာႏွစ္ဆယ့္ငါးသိန္း ရွစ္ေသာင္းငါးေထာင္<br />700 = သိန္းခုႏွစ္ရာ<br />1200 = သိန္းတစ္ေထာင့္ႏွစ္ရာ<br />25000 = သိန္းႏွစ္ေသာင္းခြဲ<br /><br />အဂၤလိပ္ ဂဏာန္းျဖင့္ ႐ိုက္ထည့္ရန္ လိုပါသည္။"></div> </div>
+					<div class="form-group" id="Acre-Price-Container" style="display: none;">
+					<label for="Acre-Price" class="col-sm-4 control-label">တစ္ဧက ေစ်းႏႈန္း</label> 
+					<div class="col-sm-7">
+					<input name="Acre_Price" id="Acre-Price" type="text" value="" class="form-control" placeholder="ရိွလွ်င္ ထည့္ရန္" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" data-original-title="ေရာင္းေစ်း က်ပ္<br />(အဂၤလိပ္ ဂဏာန္းျဖင့္ ႐ိုက္ထည့္ပါ)<br /><br />နမူနာ<br />50 = သိန္းငါးဆယ္<br />82.5 = ရွစ္ဆယ့္ႏွစ္သိန္းခြဲ<br />125.85 = တစ္ရာႏွစ္ဆယ့္ငါးသိန္း ရွစ္ေသာင္းငါးေထာင္<br />700 = သိန္းခုႏွစ္ရာ<br />1200 = သိန္းတစ္ေထာင့္ႏွစ္ရာ<br />25000 = သိန္းႏွစ္ေသာင္းခြဲ<br /><br />အဂၤလိပ္ ဂဏာန္းျဖင့္ ႐ိုက္ထည့္ရန္ လိုပါသည္။"></div> </div>
+					<div class="form-group">
+					<label class="col-sm-4 control-label" for="Furnished">ျပင္ဆင္ၿပီး</label>
+					<div class="col-sm-7">
+					<select name="Furnished" id="Furnished" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" data-original-title="တစ္ခု ေရြးျခယ္ပါ။">
+					<option value="33333">&nbsp;</option>
+					<option value="1">မျပင္ဆင္ရေသး</option>
+					<option value="2">တစ္စိတ္တစ္ပိုင္း ျပင္ဆင္ၿပီး</option>
+					<option value="3">အလံုးစံု ျပင္ဆင္ၿပီး</option> </select> </div> </div> <div class="form-group">
+					<label class="col-sm-4 control-label" for="Bedroom">အိပ္ခန္း</label> 
+					<div class="col-sm-7">
+					<select name="Bedroom" id="Bedroom" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" data-original-title="ပါဝင္ေသာ အိပ္ခန္းေပါင္း"> 
+					<option value="0" selected="selected">မပါ</option>
+					<option value="1">၁ ခန္း</option>
+					<option value="2">၂ ခန္း</option>
+					<option value="3">၃ ခန္း</option>
+					<option value="4">၄ ခန္း</option>
+					<option value="5">၅ ခန္း</option>
+					<option value="6">၆ ခန္း</option>
+					<option value="7">၇ ခန္း</option>
+					<option value="8">၈ ခန္း</option>
+					<option value="9">၉ ခန္း</option>
+					<option value="10">၁၀ ခန္း</option>
+					</select> </div> </div>
+					<div class="form-group">
+					<label class="col-sm-4 control-label" for="Bathroom">ေရခ်ိဳးခန္း</label>
+					<div class="col-sm-7">
+					<select name="Bathroom" id="Bathroom" class="form-control" title="" data-toggle="tooltip" data-placement="right" data-trigger="focus" data-html="true" data-original-title="ပါဝင္ေသာ ေရခ်ိဳးခန္းေပါင္း">
+					<option value="0" selected="selected">မပါ</option>
+					<option value="1">၁ ခန္း</option>
+					<option value="2">၂ ခန္း</option>
+					<option value="3">၃ ခန္း</option>
+					<option value="4">၄ ခန္း</option>
+					<option value="5">၅ ခန္း</option>
+					<option value="6">၆ ခန္း</option>
+					<option value="7">၇ ခန္း</option> </select> 
+				</div> 
+			</div> 
+		</form> 
+	</div>
+
+
+	<script>
+		var type = parseInt(0);	
+		var new_launch = parseInt(0);
+
+		if (type == 0 || type == 4) {
+
+		$('#trhideclass-newlaunch').hide('slow');	}
+
+		if (new_launch == 0) {	$('#trhideclass-completiondate').hide('slow');	}
+
+		if(type != 4 && type != 6) {	
+
+		$('#price-info-text').hide('slow');
+
+		$('#Sqrt-ft-Price-Container').hide('slow');	
+
+		$('#Acre-Price-Container').hide('slow');	}
+
+		var propertyType = $('#Property_Type').val();
+
+		if(propertyType == 1 || propertyType == 2) {
+
+		$('#floor-wrapper').show();	} else {	
+
+		$('#floor-wrapper').hide();	}
+
+		$('#Property_Type').change(function() {	
+
+		var val = $(this).val();
+
+		if(val == 4 || val == 6) {
+
+		$('#price-info-text').show('slow');
+
+		$('#Sqrt-ft-Price-Container').show('slow');	
+
+		$('#Acre-Price-Container').show('slow');	} 
+
+		else {	$('#price-info-text').hide('slow');	
+
+		$('#Sqrt-ft-Price-Container').hide('slow');	
+
+		$('#Acre-Price-Container').hide('slow');	}
+
+		if(val == 1 || val == 2) {	
+
+		$('#floor-wrapper').show('slow');	} 
+
+		else {
+
+		$('#floor-wrapper').hide('slow');
+
+		}	});
+
+		function UpdateNewLaunch() { 
+		var temp_property_type = document.getElementById('Property_Type').value; 
+		if (temp_property_type == 33333 || temp_property_type == 4) 
+		{ 
+		$('#trhideclass-newlaunch').hide('slow'); 
+
+		$('#trhideclass-completiondate').hide('slow');
+		} 
+		else { $('#trhideclass-newlaunch').show('slow');
+
+		if (document.getElementById('New_Launch1').checked) { 
+
+		$('#trhideclass-completiondate').hide('slow');
+
+		} else if (document.getElementById('New_Launch2').checked) { 
+
+		$('#trhideclass-completiondate').show('slow'); } }	}
+
+		function UpdateCompletionDate() { 
+
+		if (document.getElementById('New_Launch1').checked) { 
+
+		$('#trhideclass-completiondate').hide('slow'); }
+
+		else if (document.getElementById('New_Launch2').checked) { 
+
+		$('#trhideclass-completiondate').show('slow'); }	};
+
+		function UpdateCompletionDate() { 
+		if (document.getElementById('New_Launch1').checked) { 
+
+		$('#trhideclass-completiondate').hide('slow'); } 
+
+		else if (document.getElementById('New_Launch2').checked) { 
+
+		$('#trhideclass-completiondate').show('slow'); }}
+	</script>
+
+</body>
+</html>
